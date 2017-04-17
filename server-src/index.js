@@ -5,14 +5,18 @@ import ReactDOM from 'react-dom/server';
 import Html from './../src/components/Html';
 import Home from './../src/pages/Home';
 import bodyParser from 'body-parser';
+import favicon from 'serve-favicon';
 
 const app = express();
 
 app.use(express.static('public'))
 
+app.use(favicon('public/images/favicon.png'));
 // Parse our POST and PUT bodies.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
 
 app.use('/api', require('./api'));
 
