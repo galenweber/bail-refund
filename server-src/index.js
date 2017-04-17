@@ -2,6 +2,7 @@ import path from 'path';
 import express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
+import Helmet from 'react-helmet';
 import Html from './../src/components/Html';
 import Home from './../src/pages/Home';
 import bodyParser from 'body-parser';
@@ -23,7 +24,8 @@ app.use('/api', require('./api'));
 app.get('/*', (req, res) => {
 
   const children = ReactDOM.renderToString(<Home />);
-  const props = { children };
+  const helmet = Helmet.renderStatic();
+  const props = { children, helmet };
 
   const html = ReactDOM.renderToStaticMarkup(<Html {...props} />);
   res.send(`<!doctype html>${html}`);

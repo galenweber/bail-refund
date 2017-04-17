@@ -2,13 +2,16 @@ import React from 'react';
 import './styles.css';
 
 export default function Html(props) {
-  const { children } = props;
+  const { children, helmet } = props;
 
   return (
     <html id="html" className="no-js" lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        {helmet.title.toComponent()}
+        {helmet.meta.toComponent()}
+        {helmet.script.toComponent()}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
