@@ -1,0 +1,106 @@
+.call-to-action {
+  overflow: auto;
+  text-align: center;
+  color: white;
+  font-family: var(--logo-font);
+  background-color: var(--primary-color);
+  border-bottom: var(--border);
+}
+
+@media(min-width: 800px) {
+  .call-to-action {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    padding-bottom: 80px;
+  }
+}
+
+.call-to-action h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  max-width: 500px;
+}
+
+@media(min-width: 800px) {
+  .call-to-action h1 {
+    text-align: left;
+  }
+}
+
+@media(min-width: 600px) {
+  .call-to-action h1 {
+    font-size: 50px;
+    margin-top: 60px;
+  }
+}
+
+.call-to-action p {
+  margin: auto;
+  max-width: 600px;
+  font-size: 20px;
+}
+
+@media(min-width: 800px) {
+  .call-to-action p {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.call-to-action__button {
+  margin-top: 50px;
+  width: 200px;
+  height: 50px;
+  color: white;
+  background-color: var(--accent-color);
+  font-family: var(--logo-font);
+  font-size: 16px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.75);
+  cursor: pointer;
+}
+
+.call-to-action__button:hover {
+  background-color: var(--accent-color-100);
+}
+
+.call-to-action__button:active {
+  background-color: var(--accent-color-400);
+}
+
+.call-to-action svg {
+  height: 300px;
+  max-width: 100%;
+  margin-top: 40px;
+}
+
+@media(min-width: 800px) {
+  .call-to-action svg {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+  }
+}
+
+.flex-left {
+  flex-grow: 1;
+  flex-basis: auto;
+}
+
+@media(min-width:800px) {
+  .flex-right {
+    flex-grow: 1;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.filler {
+  flex-grow: 1;
+}

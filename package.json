@@ -1,0 +1,39 @@
+{
+  "name": "bail-refund",
+  "version": "1.0.0",
+  "description": "Site to offer bail refund advances for New Yorkers.",
+  "main": "index.js",
+  "scripts": {
+    "build:server": "webpack --env=server --progress --profile --colors --watch",
+    "build:dev": "webpack --env=dev --progress --profile --colors --watch",
+    "dev-server": "webpack-dev-server --content-base public --env=dev",
+    "nodemon": "nodemon server-app/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ngrok": "ngrok http 8080"
+  },
+  "author": "Galen Weber",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-scroll": "^1.5.0",
+    "webpack": "^2.4.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-airbnb": "^2.2.3",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "ignore-loader": "^0.1.2",
+    "nodemon": "^1.11.0",
+    "style-loader": "^0.16.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}

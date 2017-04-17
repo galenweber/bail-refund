@@ -1,0 +1,83 @@
+.apply-now {
+  background-color: var(--gray-background);
+  overflow: auto;
+  text-align: left;
+  font-family: var(--logo-font);
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.apply-now h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.apply-now__input-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+.apply-now form {
+}
+
+.apply-now__fieldset {
+  margin-bottom: 20px;
+}
+
+.apply-now label {
+  font-size: 18px;
+}
+
+.apply-now input {
+  flex-grow: 1;
+  font-family: var(--logo-font);
+  font-size: 20px;
+  line-height: 30px;
+  padding-left: 5px;
+  border: var(--border);
+  border-radius: 3px;
+}
+
+.apply-now select {
+  height: 30px;
+  font-size: 20px;
+}
+
+.apply-now__phone-text {
+  color: var(--secondary-text-color);
+  font-size: 14px;
+}
+
+.apply-now__checkbox-label {
+  margin-right: 20px;
+}
+
+.apply-now__button {
+  margin-top: 20px;
+  height: 50px;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  font-family: var(--logo-font);
+  font-size: 16px;
+  padding: 15px 30px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.75);
+  cursor: pointer;
+}
+
+.apply-now__button:hover {
+  background-color: var(--primary-color-shade);
+}
+
+input.input-error {
+  border: 1px solid #eb3432;
+}
+
+p.apply-now__error-text {
+  color: #eb3432;
+  font-size: 14px;
+  margin-top: 7px;
+}

@@ -1,0 +1,28 @@
+.how-works {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-family: var(--logo-font);
+  border-bottom: var(--border)
+}
+
+.how-works h2 {
+  margin-bottom: 60px;
+}
+
+.how-works__subheader {
+  color: var(--primary-color-shade);
+  font-size: 20px;
+}
+
+.how-works__body {
+  color: var(--text-color);
+}
+
+.how-works__divider {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 60%;
+  border: 0;
+  border-top: var(--border);
+}
