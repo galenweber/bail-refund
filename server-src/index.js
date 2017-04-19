@@ -17,6 +17,13 @@ app.use(favicon('public/images/favicon.png'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+/* At the top, with other redirect methods before other routes */
+app.get('*',function(req,res,next){
+  if(req.headers['x-forwarded-proto']!='https' && process.env.NODE_ENV === "production")
+    res.redirect('https://www.bailrefund.com'+req.url)
+  else
+    next() /* Continue to other routes if we're not redirecting */
+})
 
 
 app.use('/api', require('./api'));

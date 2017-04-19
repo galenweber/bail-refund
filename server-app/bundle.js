@@ -30135,6 +30135,11 @@ app.use((0, _serveFavicon2['default'])('public/images/favicon.png'));
 app.use(_bodyParser2['default'].json());
 app.use(_bodyParser2['default'].urlencoded({ extended: true }));
 
+/* At the top, with other redirect methods before other routes */
+app.get('*', function (req, res, next) {
+  if (req.headers['x-forwarded-proto'] != 'https' && process.env.NODE_ENV === "production") res.redirect('https://www.bailrefund.com' + req.url);else next(); /* Continue to other routes if we're not redirecting */
+});
+
 app.use('/api', __webpack_require__(176));
 
 app.get('/*', function (req, res) {
