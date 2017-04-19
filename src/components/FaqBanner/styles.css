@@ -1,0 +1,50 @@
+.faqbanner {
+  border-bottom: var(--border);
+  padding-top: 40px;
+  padding-bottom: 80px;
+  font-family: var(--logo-font);
+  color: var(--text-color);
+}
+
+@media (min-width: 600px) {
+  .faqbanner__flexcontainer {
+    display: flex;
+    flex-direction: horizontal;
+  }
+}
+
+.faqbanner__p-q {
+  color: var(--primary-color);
+}
+
+.faqbanner__p-a {
+  margin-bottom: 40px;
+  line-height: 1.5em;
+}
+
+.faqbanner__link {
+  color: var(--accent-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/*this media width needs to match the one above*/
+@media (min-width: 600px) {
+  .faqbanner__flexleft {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding-right: 30px;
+  }
+}
+
+/*this media width needs to match the one above*/
+@media (min-width: 600px) {
+  .faqbanner__flexright {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding-left: 30px;
+  }
+}
+
+

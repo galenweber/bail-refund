@@ -102,7 +102,7 @@ export default class ApplyNow extends React.Component {
             </p>
           </div>
           <div className="apply-now__fieldset">
-            <label>When did the case close?</label>
+            <label>When did the case close?<br /><span className="apply-now__phone-text">(if still ongoing, enter "ongoing")</span></label>
             <div className="apply-now__input-container">
               <input
                 type="text"
@@ -160,7 +160,7 @@ export default class ApplyNow extends React.Component {
             onClick={this.onSubmit}
             disabled={submitted}
             className="apply-now__button">
-            {(this.state.submitted) ? 'Submitted!' : 'Apply Now'}
+            {(this.state.submitted) ? 'Submitted!' : 'Get pre-qualified'}
           </button>
         </form>
       </div>

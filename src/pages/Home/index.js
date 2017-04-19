@@ -5,6 +5,10 @@ import Navbar from '../../components/Navbar';
 import CallToAction from '../../components/CallToAction';
 import HowWorks from '../../components/HowWorks';
 import ApplyNow from '../../components/ApplyNow';
+import FaqBanner from '../../components/FaqBanner';
+import TermsBanner from '../../components/TermsBanner';
+import LivePayout from '../../components/LivePayout';
+import Footer from '../../components/Footer';
 
 export default function Home() {
   return (
@@ -16,7 +20,11 @@ export default function Home() {
       <Navbar />
       <CallToAction />
       <HowWorks />
+      <LivePayout />
       <ApplyNow />
+      <FaqBanner />
+      <TermsBanner />
+      <Footer />
     </div>
   )
 }

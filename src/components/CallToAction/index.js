@@ -20,7 +20,7 @@ export default function CallToAction() {
           delay={100}>
           <button
             className="call-to-action__button">
-            Apply Now
+            Get pre-qualified
           </button>
         </Link>
       </div>

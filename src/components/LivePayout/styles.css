@@ -1,0 +1,45 @@
+.live-payout {
+  text-align: center;
+  background-color: var(--accent-color);
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.live-payout__subheader {
+  color: white;
+  font-family: var(--logo-font);
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.live-payout h2.section-header {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.live-payout__payout {
+  color: white;
+  font-family: var(--logo-font);
+  font-weight: 200;
+  font-size: 37px;
+}
+
+.live-payout__bail-label {
+  color: white;
+  font-family: var(--logo-font);
+  font-weight: 200;
+}
+
+.live-payout__input {
+  font-size: 22px;
+  line-height: 22px;
+  padding: 10px 10px;
+  font-family: var(--logo-font);
+  border-radius: 4px;
+}
+
+@media(min-width: 600px) {
+  .live-payout__input {
+    font-size: 18px;
+  }
+}

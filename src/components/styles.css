@@ -34,8 +34,9 @@ body {
   --secondary-text-color: rgba(0,0,0,0.54);
   --border: solid 1px #d9d9de;
   --gray-background: #fafafa;
+  --gray-shade: #e1e1e1;
   --orange: #FF6A00;
   --orange-hover: #FEA74F;
   --orange-active: #CE6902;
-
 }
+
