@@ -34,7 +34,7 @@ export default function FaqBanner() {
               Is the money I receive from BailRefund a loan?
             </h3>
             <p className="faqbanner__p-a">
-              No! The money you receive from us is never paid back. You will transfer ownership of your bail receipt, and we will collect payment from the city.
+              No! The money you receive from us is yours to keep. You will transfer ownership of your bail receipt, and we will collect payment from the city.
             </p>
           </div>
         </div>

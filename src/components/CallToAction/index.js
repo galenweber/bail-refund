@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 import Scroll from 'react-scroll';
 import MoneySvg from './MoneySvg';
+import imgSrc from 'url-loader?limit=10000!./cash-stacks.png';
 
 const Link = Scroll.Link;
 
@@ -26,7 +27,11 @@ export default function CallToAction() {
       </div>
       <div className="flex-right">
         <div className="filler" />
-        <MoneySvg />
+        <img
+          alt="NYC Bail Refund Money In Stacks of Cash, No Check"
+          className="call-to-action__img"
+          src={imgSrc}
+        />
       </div>
     </div>
   )

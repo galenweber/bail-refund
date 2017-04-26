@@ -13,7 +13,7 @@ export default function TermsBanner() {
           Fund your present
         </h2>
         <p className="terms-banner__subheader">
-          We provide fast, transparent payments for your use.
+          We provide fast, transparent bail refunds in NYC.
           <br />
           No jargon, no hidden fees, just one simple process at a fair rate.
         </p>

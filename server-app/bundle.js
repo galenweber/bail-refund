@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 416);
+/******/ 	return __webpack_require__(__webpack_require__.s = 417);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -31557,6 +31557,10 @@ var _MoneySvg = __webpack_require__(178);
 
 var _MoneySvg2 = _interopRequireDefault(_MoneySvg);
 
+var _cashStacks = __webpack_require__(411);
+
+var _cashStacks2 = _interopRequireDefault(_cashStacks);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var Link = _reactScroll2['default'].Link;
@@ -31610,7 +31614,11 @@ function CallToAction() {
       'div',
       { className: 'flex-right' },
       _react2['default'].createElement('div', { className: 'filler' }),
-      _react2['default'].createElement(_MoneySvg2['default'], null)
+      _react2['default'].createElement('img', {
+        alt: 'NYC Bail Refund Money In Stacks of Cash, No Check',
+        className: 'call-to-action__img',
+        src: _cashStacks2['default']
+      })
     )
   );
 }
@@ -31691,7 +31699,7 @@ function FaqBanner() {
         _react2['default'].createElement(
           'p',
           { className: 'faqbanner__p-a' },
-          'No! The money you receive from us is never paid back. You will transfer ownership of your bail receipt, and we will collect payment from the city.'
+          'No! The money you receive from us is yours to keep. You will transfer ownership of your bail receipt, and we will collect payment from the city.'
         )
       )
     ),
@@ -31969,7 +31977,7 @@ var LivePayout = function (_React$Component) {
                 { className: 'live-payout__subheader' },
                 'Enter the amount on your bail receipt',
                 _react2['default'].createElement('br', null),
-                ' And get the live quote of your potential payment.'
+                ' And get the live quote of your cash refund payment.'
               )
             ),
             _react2['default'].createElement(
@@ -32162,7 +32170,7 @@ function TermsBanner() {
       _react2['default'].createElement(
         'p',
         { className: 'terms-banner__subheader' },
-        'We provide fast, transparent payments for your use.',
+        'We provide fast, transparent bail refunds in NYC.',
         _react2['default'].createElement('br', null),
         'No jargon, no hidden fees, just one simple process at a fair rate.'
       )
@@ -32292,9 +32300,9 @@ function Home() {
       _react2['default'].createElement(
         'title',
         null,
-        'Bail Refund NYC - We Pay Cash for Bail Refund Receipts'
+        'NYC Bail Refund Check | We Pay Cash For Bail Money Receipt'
       ),
-      _react2['default'].createElement('meta', { name: 'description', content: 'We pay cash for bail refund receipts. Receive up to $5,000 for your NYC cash bail receipt. Same day payment available. Over 95% approval rate.' })
+      _react2['default'].createElement('meta', { name: 'description', content: 'Don\'t wait 8 weeks. We pay cash for NYC bail refund receipts. Apply in minutes and receive up to $5,000 the same day. Over 98% of applicants approved.' })
     ),
     _react2['default'].createElement(_Navbar2['default'], null),
     _react2['default'].createElement(_CallToAction2['default'], null),
@@ -35814,7 +35822,7 @@ var send = __webpack_require__(92);
 var extname = path.extname;
 var mime = send.mime;
 var resolve = path.resolve;
-var vary = __webpack_require__(411);
+var vary = __webpack_require__(412);
 
 /**
  * Response prototype.
@@ -39855,7 +39863,7 @@ InternalCodec.prototype.decoder = InternalDecoder;
 //------------------------------------------------------------------------------
 
 // We use node.js internal decoder. Its signature is the same as ours.
-var StringDecoder = __webpack_require__(415).StringDecoder;
+var StringDecoder = __webpack_require__(416).StringDecoder;
 
 if (!StringDecoder.prototype.end) // Node v0.8 doesn't have this method.
     StringDecoder.prototype.end = function() {};
@@ -46870,7 +46878,7 @@ if (typeof Object.create === 'function') {
 
 }).call(this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(412)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(413)(module)))
 
 /***/ }),
 /* 265 */
@@ -63557,7 +63565,7 @@ const urllib = __webpack_require__(19);
 const packageData = __webpack_require__(22);
 const MailMessage = __webpack_require__(295);
 const net = __webpack_require__(31);
-const dns = __webpack_require__(414);
+const dns = __webpack_require__(415);
 const crypto = __webpack_require__(15);
 
 /**
@@ -64233,7 +64241,7 @@ module.exports.createTransport = function (transporter, defaults) {
 "use strict";
 
 
-const spawn = __webpack_require__(413).spawn;
+const spawn = __webpack_require__(414).spawn;
 const packageData = __webpack_require__(22);
 const LeWindows = __webpack_require__(69);
 const LeUnix = __webpack_require__(118);
@@ -81791,6 +81799,12 @@ module.exports = {
 /* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "a25bde6aed8af5cc5e3cf0b4a21086b5.png";
+
+/***/ }),
+/* 412 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /*!
  * vary
@@ -81926,7 +81940,7 @@ function vary (res, field) {
 
 
 /***/ }),
-/* 412 */
+/* 413 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -81954,25 +81968,25 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 413 */
+/* 414 */
 /***/ (function(module, exports) {
 
 module.exports = require("child_process");
 
 /***/ }),
-/* 414 */
+/* 415 */
 /***/ (function(module, exports) {
 
 module.exports = require("dns");
 
 /***/ }),
-/* 415 */
+/* 416 */
 /***/ (function(module, exports) {
 
 module.exports = require("string_decoder");
 
 /***/ }),
-/* 416 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(170);
