@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>Bail Refund - We Pay Cash for NYC Bail Refund Receipts</title>
+        <title>Bail Refund NYC - We Pay Cash for Bail Refund Receipts</title>
         <meta name="description" content="We pay cash for bail refund receipts. Receive up to $5,000 for your NYC cash bail receipt. Same day payment available. Over 95% approval rate." />
       </Helmet>
       <Navbar />

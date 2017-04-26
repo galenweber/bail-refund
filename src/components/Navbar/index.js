@@ -8,12 +8,12 @@ export default function Navbar() {
     <div className="navbar container">
       <div className="navbar__brand">
         <SwooshSvg />
-        <p className="navbar__brand__text">BailRefund<span className="navbar__brand__text-light">.com</span></p>
+        <h2 className="navbar__brand__text">BailRefund<span className="navbar__brand__text-light">.com</span></h2>
       </div>
       <div className="navbar__filler">
       </div>
       <div className="navbar__location">
-        <p>Serving New York City</p>
+        <h2>Serving New York City</h2>
       </div>
     </div>
   )

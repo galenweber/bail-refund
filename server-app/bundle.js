@@ -31572,14 +31572,23 @@ function CallToAction() {
       _react2['default'].createElement(
         'h1',
         null,
-        'Get Up To $5,000 For Your Bail Refund'
+        'Get Cash For Your Bail Refund Receipt Today'
       ),
       _react2['default'].createElement(
-        'p',
+        'h2',
         null,
-        'The city takes over 8 weeks to process and mail bail checks. ',
-        _react2['default'].createElement('br', null),
-        'Don\'t wait. We pay cash for bail receipts.'
+        'New York City takes over 8 weeks to ',
+        _react2['default'].createElement(
+          'span',
+          { className: 'no-break' },
+          'process and mail bail checks.'
+        )
+      ),
+      ' ',
+      _react2['default'].createElement(
+        'h2',
+        null,
+        'Don\'t wait. We pay up to $5,000 cash for bail receipts.'
       ),
       _react2['default'].createElement(
         Link,
@@ -32092,7 +32101,7 @@ function Navbar() {
       { className: 'navbar__brand' },
       _react2['default'].createElement(_SwooshSvg2['default'], null),
       _react2['default'].createElement(
-        'p',
+        'h2',
         { className: 'navbar__brand__text' },
         'BailRefund',
         _react2['default'].createElement(
@@ -32107,7 +32116,7 @@ function Navbar() {
       'div',
       { className: 'navbar__location' },
       _react2['default'].createElement(
-        'p',
+        'h2',
         null,
         'Serving New York City'
       )
@@ -32283,7 +32292,7 @@ function Home() {
       _react2['default'].createElement(
         'title',
         null,
-        'Bail Refund - We Pay Cash for NYC Bail Refund Receipts'
+        'Bail Refund NYC - We Pay Cash for Bail Refund Receipts'
       ),
       _react2['default'].createElement('meta', { name: 'description', content: 'We pay cash for bail refund receipts. Receive up to $5,000 for your NYC cash bail receipt. Same day payment available. Over 95% approval rate.' })
     ),

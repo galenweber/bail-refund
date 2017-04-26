@@ -10,8 +10,8 @@ export default function CallToAction() {
   return (
     <div className="call-to-action container">
       <div className="flex-left">
-        <h1>Get Up To $5,000 For Your Bail Refund</h1>
-        <p>The city takes over 8 weeks to process and mail bail checks. <br />Don't wait. We pay cash for bail receipts.</p>
+        <h1>Get Cash For Your Bail Refund Receipt Today</h1>
+        <h2>New York City takes over 8 weeks to <span className="no-break">process and mail bail checks.</span></h2> <h2>Don't wait. We pay up to $5,000 cash for bail receipts.</h2>
         <Link
           to="applyNowScrollTo"
           smooth={true}

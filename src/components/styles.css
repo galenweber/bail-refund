@@ -40,3 +40,6 @@ body {
   --orange-active: #CE6902;
 }
 
+.no-break {
+  white-space: nowrap;
+}
