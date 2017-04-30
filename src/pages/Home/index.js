@@ -26,8 +26,6 @@ export default class Home extends React.Component{
         </Helmet>
         <Navbar />
         <CallToAction />
-        <input type="file" accept="image/*" capture="camera" id="camera" />
-        <img src={src} id="frame" />
         <HowWorks />
         <LivePayout />
         <ApplyNow />
