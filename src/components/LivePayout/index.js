@@ -39,7 +39,7 @@ class LivePayout extends React.Component {
             </h2>
             <p className="live-payout__subheader">
               Enter the amount on your bail receipt
-              <br /> And get the live quote of your cash refund payment.
+              <br /> And get the live quote of your advance refund payment.
             </p>
           </div>
           <h2 className="global__h2 live-payout__payout">

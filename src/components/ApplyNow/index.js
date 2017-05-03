@@ -82,8 +82,11 @@ export default class ApplyNow extends React.Component {
       <div className="apply-now container">
         <Element name="applyNowScrollTo"></Element>
         <h2 className="section-header">
-          Apply Now
+          Get Pre-Qualified
         </h2>
+        <h4 className="section-subheader">
+          There's no obligation, and you'll receive a decision in minutes
+        </h4>
         <form>
           <div className="apply-now__fieldset">
             <label>What is the bail amount?</label>

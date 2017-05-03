@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,800,900');
 
 body {
   margin: 0;
 }
+
+.home__top {
+  background-image: linear-gradient(#00BFA5 0,#00B8D4 100%);
+}
+
 
 .container {
   padding-left: 20px;
@@ -16,6 +21,13 @@ body {
   font-size: 35px;
 }
 
+.section-subheader {
+  font-weight: 200;
+  font-family: var(--logo-font);
+  color: var(--text-color);
+  font-size: 20px;
+}
+
 @media(min-width: 600px) {
   .container {
     padding-left: 80px;
@@ -26,6 +38,7 @@ body {
 :root {
   --primary-color: #40D6A6;
   --primary-color-shade: #2c9574;
+  --primary-color-alternate: #2A86E1;
   --accent-color: #448AFF;
   --accent-color-100:#82B1FF;
   --accent-color-400: #2979FF;

@@ -3,8 +3,10 @@ import { Helmet } from 'react-helmet';
 import './styles.css';
 import Navbar from '../../components/Navbar';
 import CallToAction from '../../components/CallToAction';
+import LearnMoreBar from '../../components/LearnMoreBar';
 import HowWorks from '../../components/HowWorks';
 import ApplyNow from '../../components/ApplyNow';
+import PhotoApply from '../../components/PhotoApply';
 import FaqBanner from '../../components/FaqBanner';
 import TermsBanner from '../../components/TermsBanner';
 import LivePayout from '../../components/LivePayout';
@@ -26,9 +28,11 @@ export default class Home extends React.Component{
         </Helmet>
         <Navbar />
         <CallToAction />
+        <LearnMoreBar />
         <HowWorks />
         <LivePayout />
         <ApplyNow />
+        <PhotoApply />
         <FaqBanner />
         <TermsBanner />
         <Footer />

@@ -1,0 +1,21 @@
+.learn-more-bar {
+  background-color: var(--primary-color-alternate);
+  color: white;
+  font-family: var(--logo-font);
+  text-align: center;
+  padding: 25px;
+  border-bottom: var(--border);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.learn-more-bar svg {
+  fill: white;
+  height: 18px;
+  vertical-align: top;
+}
+
+.learn-more-bar a {
+  cursor: pointer;
+}

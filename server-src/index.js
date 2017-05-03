@@ -14,8 +14,8 @@ app.use(express.static('public'))
 
 app.use(favicon('public/images/favicon.png'));
 // Parse our POST and PUT bodies.
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 
 /* At the top, with other redirect methods before other routes */
 app.get('*',function(req,res,next){

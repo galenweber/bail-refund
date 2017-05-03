@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import BailRefundLogoSvg from './BailRefundLogoSvg';
 import SwooshSvg from './SwooshSvg';
 
 export default function Navbar() {
