@@ -32,11 +32,6 @@ module.exports = function (env) {
             publicPath: '',
           })
         },
-        //{
-          //test: /\.css$/,
-          //exclude: /node_modules/,
-          //use: 'ignore-loader'
-        //},
       ]
     },
     plugins: [

@@ -447,6 +447,7 @@ p.apply-now__error-text {
   background-color: gray;
   margin: auto;
   margin-top: 20px;
+  border: var(--border);
 }
 
 .photo-apply__input {

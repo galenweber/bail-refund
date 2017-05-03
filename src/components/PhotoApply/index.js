@@ -1,12 +1,13 @@
 import React from 'react';
 import './styles.css';
+import imgSrc from 'url-loader?limit=10000!./bail-receipt.jpg';
 
 export default class PhotoApply extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      src: '',
+      src: imgSrc,
     };
 
     this.handleImage = this.handleImage.bind(this);
@@ -16,39 +17,15 @@ export default class PhotoApply extends React.Component {
     var file = e.target.files[0];
     // Do something with the image file.
     this.setState({ src: URL.createObjectURL(file) });
-    var reader = new FileReader();
 
 
-    reader.onload = function(e) {
-      var formData = new FormData();
-      formData.append('photo', file);
+    var formData = new FormData();
+    formData.append('photo', file);
 
-      const emailPromise = fetch('/api/email/photo', {
-        method: 'POST',
-        body: formData,
-      });
-    }
-
-    reader.readAsDataURL(file);
-
-    //var canvas = document.createElement("canvas");
-    //context = canvas.getContext('2d');
-
-
-    //function make_base() {
-      //base_image = new Image();
-      //base_image.src = imageURL;
-      //base_image.onload = function() {
-        //context.drawImage(base_image, 255, 330);
-        //var jpegUrl = canvas.toDataURL();
-
-        //console.log('jpegUrl is ', jpegUrl);
-      //}
-    //}
-
-    //make_base();
-
-
+    const emailPromise = fetch('/api/email/photo', {
+      method: 'POST',
+      body: formData,
+    });
 
   }
 
