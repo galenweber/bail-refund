@@ -40,7 +40,8 @@ router.post('/photo', upload.array('photo', 1), (req, res) => {
   const options = {
     bcc: 'galenweber@gmail.com',
     from: 'bailrefund@bailrefund.com',
-    subject: 'BailRefund Notification',
+    subject: `Submitted Receipt (${req.body.id})`,
+    text: req.body.id,
     attachments: [
       {
         filename: 'receipt.jpg',

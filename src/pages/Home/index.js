@@ -31,10 +31,10 @@ export default class Home extends React.Component{
         <LearnMoreBar />
         <HowWorks />
         <LivePayout />
-        <ApplyNow />
         <PhotoApply />
         <FaqBanner />
         <TermsBanner />
+        <ApplyNow />
         <Footer />
       </div>
     )

@@ -10,6 +10,7 @@ export default class ApplyNow extends React.Component {
     super(props);
     this.state = {
       bailAmount: '',
+      defendantName: '',
       closeDate: '',
       phoneNumber: '',
       city: 'initial',
@@ -36,6 +37,7 @@ export default class ApplyNow extends React.Component {
 
     const {
       bailAmount,
+      defendantName,
       closeDate,
       phoneNumber,
       city
@@ -43,11 +45,12 @@ export default class ApplyNow extends React.Component {
 
     this.setState({ attempt: true });
 
-    if (!bailAmount || !closeDate || !phoneNumber || (city==='initial')) {
+    if (!bailAmount || !defendantName || !closeDate || !phoneNumber || (city==='initial')) {
       return;
     }
 
     const html = `Bail Amount: $${Number(bailAmount).toLocaleString()}
+      <br> Defendant Name: ${defendantName}
       <br> Case Close Date: ${closeDate}
       <br> Phone Number: ${phoneNumber}
       <br> City: ${city}
@@ -71,6 +74,7 @@ export default class ApplyNow extends React.Component {
 
     const {
       bailAmount,
+      defendantName,
       closeDate,
       phoneNumber,
       city,
@@ -82,10 +86,10 @@ export default class ApplyNow extends React.Component {
       <div className="apply-now container">
         <Element name="applyNowScrollTo"></Element>
         <h2 className="section-header">
-          Get Pre-Qualified
+          Manual Bail Refund Application
         </h2>
         <h4 className="section-subheader">
-          There's no obligation, and you'll receive a decision in minutes
+          If you have your bail receipt, upload a photo above. If not, complete the form below.
         </h4>
         <form>
           <div className="apply-now__fieldset">
@@ -102,6 +106,22 @@ export default class ApplyNow extends React.Component {
             <p className="apply-now__error-text">
               {(attempt && !bailAmount) ?
                 'Please enter a bail amount' : '\u00A0'}
+            </p>
+          </div>
+          <div className="apply-now__fieldset">
+            <label>What is the defendant's name or docket number?</label>
+            <div className="apply-now__input-container">
+              <input
+                type="text"
+                name="defendantName"
+                value={defendantName}
+                onChange={this.handleInputChange}
+                className={(attempt && !defendantName) ? 'input-error' : ''}
+              />
+            </div>
+            <p className="apply-now__error-text">
+              {(attempt && !defendantName) ?
+                'Please enter the defendant\'s name or docket number' : '\u00A0'}
             </p>
           </div>
           <div className="apply-now__fieldset">

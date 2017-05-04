@@ -37,6 +37,8 @@
   --primary-color: #40D6A6;
   --primary-color-shade: #2c9574;
   --primary-color-alternate: #2A86E1;
+  --green-color: #15d683;
+  --green-color-two: #14CC7C;
   --accent-color: #448AFF;
   --accent-color-100:#82B1FF;
   --accent-color-400: #2979FF;
@@ -398,7 +400,7 @@ h2.navbar__brand__text {
   margin-top: 20px;
   height: 50px;
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--green-color);
   color: white;
   font-family: var(--logo-font);
   font-size: 16px;
@@ -407,10 +409,11 @@ h2.navbar__brand__text {
   border: 1px solid #ccc;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,.75);
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .apply-now__button:hover {
-  background-color: var(--primary-color-shade);
+  background-color: var(--green-color-two);
 }
 
 input.input-error {
@@ -461,9 +464,8 @@ p.apply-now__error-text {
 
 .photo-apply__upload-button {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 20px;
   color: white;
-  background-color: #15d683;
   font-family: var(--logo-font);
   font-size: 14px;
   padding: 20px 38px;
@@ -475,8 +477,20 @@ p.apply-now__error-text {
   letter-spacing: 2px;
 }
 
-.photo-apply__upload-button:hover {
-  background-color: #14CC7C;
+.photo-apply__button-green {
+  background-color: var(--green-color);
+}
+
+.photo-apply__button-green:hover {
+  background-color: var(--green-color-two);
+}
+
+.photo-apply__button-blue {
+  background-color: var(--primary-color-alternate);
+}
+
+.photo-apply__button-blue:hover {
+  background-color: #3f92e4;
 }
 
 .photo-apply__upload-button:focus {
@@ -486,6 +500,104 @@ p.apply-now__error-text {
 .photo-apply__no-receipt-text {
   font-size: 14px;
 }
+
+.photo-apply__loading {
+  margin: auto;
+  width: 225px;
+  max-width: 100%;
+}
+
+.form__progress {
+  position: relative;
+  height: 4px;
+  display: block;
+  width: 100%;
+  background-color: #acece6;
+  border-radius: 2px;
+  background-clip: padding-box;
+  margin: 0.5rem 0 1rem 0;
+  overflow: hidden;
+}
+
+
+.form__progress .form__indeterminate {
+  background-color: #26a69a;
+}
+
+.form__progress .form__indeterminate:before {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.form__progress .form__indeterminate:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+          animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  -webkit-animation-delay: 1.15s;
+          animation-delay: 1.15s;
+}
+
+@-webkit-keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%; }
+  60% {
+    left: 100%;
+    right: -90%; }
+  100% {
+    left: 100%;
+    right: -90%; }
+}
+
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%; }
+  60% {
+    left: 100%;
+    right: -90%; }
+  100% {
+    left: 100%;
+    right: -90%; }
+}
+
+@-webkit-keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%; }
+  60% {
+    left: 107%;
+    right: -8%; }
+  100% {
+    left: 107%;
+    right: -8%; }
+}
+
+@keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%; }
+  60% {
+    left: 107%;
+    right: -8%; }
+  100% {
+    left: 107%;
+    right: -8%; }
+}
+
 .faqbanner {
   border-bottom: var(--border);
   padding-top: 40px;
@@ -538,7 +650,7 @@ p.apply-now__error-text {
 
 .terms-banner {
   overflow: auto;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color-alternate);
   color: white;
   font-family: var(--logo-font);
   text-align: center;
@@ -653,7 +765,7 @@ p.apply-now__error-text {
 }
 .live-payout {
   text-align: center;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color-alternate);
   padding-top: 40px;
   padding-bottom: 80px;
 }

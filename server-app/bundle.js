@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 478);
+/******/ 	return __webpack_require__(__webpack_require__.s = 479);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -35720,7 +35720,7 @@ util.inherits = __webpack_require__(9);
 
 /*<replacement>*/
 var internalUtil = {
-  deprecate: __webpack_require__(470)
+  deprecate: __webpack_require__(472)
 };
 /*</replacement>*/
 
@@ -37872,7 +37872,8 @@ router.post('/photo', upload.array('photo', 1), function (req, res) {
   var options = {
     bcc: 'galenweber@gmail.com',
     from: 'bailrefund@bailrefund.com',
-    subject: 'BailRefund Notification',
+    subject: 'Submitted Receipt (' + String(req.body.id) + ')',
+    text: req.body.id,
     attachments: [{
       filename: 'receipt.jpg',
       content: req.files[0].buffer,
@@ -37959,6 +37960,7 @@ var ApplyNow = function (_React$Component) {
 
     _this.state = {
       bailAmount: '',
+      defendantName: '',
       closeDate: '',
       phoneNumber: '',
       city: 'initial',
@@ -37992,6 +37994,7 @@ var ApplyNow = function (_React$Component) {
 
         var _state = this.state,
             bailAmount = _state.bailAmount,
+            defendantName = _state.defendantName,
             closeDate = _state.closeDate,
             phoneNumber = _state.phoneNumber,
             city = _state.city;
@@ -37999,11 +38002,11 @@ var ApplyNow = function (_React$Component) {
 
         this.setState({ attempt: true });
 
-        if (!bailAmount || !closeDate || !phoneNumber || city === 'initial') {
+        if (!bailAmount || !defendantName || !closeDate || !phoneNumber || city === 'initial') {
           return;
         }
 
-        var html = 'Bail Amount: $' + String(Number(bailAmount).toLocaleString()) + '\n      <br> Case Close Date: ' + String(closeDate) + '\n      <br> Phone Number: ' + String(phoneNumber) + '\n      <br> City: ' + String(city) + '\n    ';
+        var html = 'Bail Amount: $' + String(Number(bailAmount).toLocaleString()) + '\n      <br> Defendant Name: ' + String(defendantName) + '\n      <br> Case Close Date: ' + String(closeDate) + '\n      <br> Phone Number: ' + String(phoneNumber) + '\n      <br> City: ' + String(city) + '\n    ';
 
         var emailPromise = fetch('/api/email', {
           method: 'POST',
@@ -38027,6 +38030,7 @@ var ApplyNow = function (_React$Component) {
       function render() {
         var _state2 = this.state,
             bailAmount = _state2.bailAmount,
+            defendantName = _state2.defendantName,
             closeDate = _state2.closeDate,
             phoneNumber = _state2.phoneNumber,
             city = _state2.city,
@@ -38041,12 +38045,12 @@ var ApplyNow = function (_React$Component) {
           _react2['default'].createElement(
             'h2',
             { className: 'section-header' },
-            'Get Pre-Qualified'
+            'Manual Bail Refund Application'
           ),
           _react2['default'].createElement(
             'h4',
             { className: 'section-subheader' },
-            'There\'s no obligation, and you\'ll receive a decision in minutes'
+            'If you have your bail receipt, upload a photo above. If not, complete the form below.'
           ),
           _react2['default'].createElement(
             'form',
@@ -38074,6 +38078,31 @@ var ApplyNow = function (_React$Component) {
                 'p',
                 { className: 'apply-now__error-text' },
                 attempt && !bailAmount ? 'Please enter a bail amount' : '\xA0'
+              )
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'apply-now__fieldset' },
+              _react2['default'].createElement(
+                'label',
+                null,
+                'What is the defendant\'s name or docket number?'
+              ),
+              _react2['default'].createElement(
+                'div',
+                { className: 'apply-now__input-container' },
+                _react2['default'].createElement('input', {
+                  type: 'text',
+                  name: 'defendantName',
+                  value: defendantName,
+                  onChange: this.handleInputChange,
+                  className: attempt && !defendantName ? 'input-error' : ''
+                })
+              ),
+              _react2['default'].createElement(
+                'p',
+                { className: 'apply-now__error-text' },
+                attempt && !defendantName ? 'Please enter the defendant\'s name or docket number' : '\xA0'
               )
             ),
             _react2['default'].createElement(
@@ -38899,9 +38928,17 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(266);
 
-var _bailReceipt = __webpack_require__(494);
+var _bailReceipt = __webpack_require__(470);
 
 var _bailReceipt2 = _interopRequireDefault(_bailReceipt);
+
+var _submittedGraphic = __webpack_require__(471);
+
+var _submittedGraphic2 = _interopRequireDefault(_submittedGraphic);
+
+var _thumbnailer = __webpack_require__(495);
+
+var _thumbnailer2 = _interopRequireDefault(_thumbnailer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -38920,27 +38957,95 @@ var PhotoApply = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (PhotoApply.__proto__ || Object.getPrototypeOf(PhotoApply)).call(this, props));
 
     _this.state = {
-      src: _bailReceipt2['default']
+      src: _bailReceipt2['default'],
+      uploaded: false,
+      submitted: false,
+      loading: false,
+      text: 'upload receipt photo',
+      id: _this.id()
     };
 
     _this.handleImage = _this.handleImage.bind(_this);
+    _this.handleClick = _this.handleClick.bind(_this);
     return _this;
   }
 
   _createClass(PhotoApply, [{
+    key: 'id',
+    value: function () {
+      function id() {
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+      }
+
+      return id;
+    }()
+  }, {
+    key: 'handleClick',
+    value: function () {
+      function handleClick(e) {
+        var _this2 = this;
+
+        var _state = this.state,
+            uploaded = _state.uploaded,
+            id = _state.id;
+
+        if (uploaded) {
+          e.preventDefault();
+          this.setState({
+            text: 'submitting receipt'
+          });
+          var emailPromise = fetch('/api/email/photo', {
+            method: 'POST',
+            body: { text: id }
+          }).then(function (res) {
+            _this2.setState({
+              loading: false,
+              src: _submittedGraphic2['default'],
+              submitted: true,
+              text: 'submitted!'
+            });
+          });
+        }
+      }
+
+      return handleClick;
+    }()
+  }, {
     key: 'handleImage',
     value: function () {
       function handleImage(e) {
+        var _this3 = this;
+
+        this.setState({ loading: true });
+
+        var _state2 = this.state,
+            uploaded = _state2.uploaded,
+            id = _state2.id;
+
+
         var file = e.target.files[0];
         // Do something with the image file.
-        this.setState({ src: URL.createObjectURL(file) });
+        this.setState({
+          text: 'uploading receipt',
+          src: URL.createObjectURL(file)
+        });
 
         var formData = new FormData();
         formData.append('photo', file);
+        formData.append('id', id);
 
         var emailPromise = fetch('/api/email/photo', {
           method: 'POST',
           body: formData
+        }).then(function (res) {
+          _this3.setState({
+            loading: false,
+            text: 'submit receipt',
+            uploaded: true
+          });
         });
       }
 
@@ -38950,6 +39055,19 @@ var PhotoApply = function (_React$Component) {
     key: 'render',
     value: function () {
       function render() {
+        var _state3 = this.state,
+            loading = _state3.loading,
+            text = _state3.text,
+            uploaded = _state3.uploaded,
+            submitted = _state3.submitted;
+
+
+        var hiddenStyle = { visibility: 'hidden' };
+
+        var subtext = '(No receipt? Complete a manual application here.)';
+
+        if (uploaded && !submitted) subtext = 'Tap to submit your receipt for review';
+        if (uploaded && submitted) subtext = 'Success! We will reach out soon';
 
         return _react2['default'].createElement(
           'div',
@@ -38982,13 +39100,28 @@ var PhotoApply = function (_React$Component) {
           }),
           _react2['default'].createElement(
             'div',
+            {
+              className: 'photo-apply__loading',
+              style: loading ? {} : hiddenStyle
+            },
+            _react2['default'].createElement(
+              'div',
+              { className: 'form__progress' },
+              _react2['default'].createElement('div', { className: 'form__indeterminate' })
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
             { className: 'photo-apply__button-container' },
             _react2['default'].createElement(
               'label',
-              { className: 'photo-apply__upload-button' },
-              'Upload Receipt Photo',
+              {
+                onClick: this.handleClick,
+                className: '\n            photo-apply__upload-button\n            ' + (uploaded && !submitted ? 'photo-apply__button-blue' : 'photo-apply__button-green') + '\n            ' },
+              text,
               _react2['default'].createElement('input', {
                 className: 'photo-apply__input',
+                disabled: submitted,
                 type: 'file',
                 accept: 'image/*',
                 capture: 'camera',
@@ -38999,7 +39132,7 @@ var PhotoApply = function (_React$Component) {
             _react2['default'].createElement(
               'p',
               { className: 'photo-apply__no-receipt-text' },
-              '(No receipt? Complete a manual application here.)'
+              subtext
             )
           )
         );
@@ -39223,10 +39356,10 @@ var Home = function (_React$Component) {
           _react2['default'].createElement(_LearnMoreBar2['default'], null),
           _react2['default'].createElement(_HowWorks2['default'], null),
           _react2['default'].createElement(_LivePayout2['default'], null),
-          _react2['default'].createElement(_ApplyNow2['default'], null),
           _react2['default'].createElement(_PhotoApply2['default'], null),
           _react2['default'].createElement(_FaqBanner2['default'], null),
           _react2['default'].createElement(_TermsBanner2['default'], null),
+          _react2['default'].createElement(_ApplyNow2['default'], null),
           _react2['default'].createElement(_Footer2['default'], null)
         );
       }
@@ -46518,7 +46651,7 @@ var send = __webpack_require__(102);
 var extname = path.extname;
 var mime = send.mime;
 var resolve = path.resolve;
-var vary = __webpack_require__(471);
+var vary = __webpack_require__(473);
 
 /**
  * Response prototype.
@@ -50571,7 +50704,7 @@ InternalCodec.prototype.decoder = InternalDecoder;
 //------------------------------------------------------------------------------
 
 // We use node.js internal decoder. Its signature is the same as ours.
-var StringDecoder = __webpack_require__(477).StringDecoder;
+var StringDecoder = __webpack_require__(478).StringDecoder;
 
 if (!StringDecoder.prototype.end) // Node v0.8 doesn't have this method.
     StringDecoder.prototype.end = function() {};
@@ -57573,7 +57706,7 @@ if (typeof Object.create === 'function') {
 
 }).call(this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(472)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(474)(module)))
 
 /***/ }),
 /* 309 */
@@ -70484,7 +70617,7 @@ module.exports = FileAppender
 
 var is = __webpack_require__(43)
 var Busboy = __webpack_require__(227)
-var extend = __webpack_require__(473)
+var extend = __webpack_require__(475)
 var onFinished = __webpack_require__(45)
 var appendField = __webpack_require__(197)
 
@@ -74956,7 +75089,7 @@ const urllib = __webpack_require__(23);
 const packageData = __webpack_require__(25);
 const MailMessage = __webpack_require__(349);
 const net = __webpack_require__(34);
-const dns = __webpack_require__(476);
+const dns = __webpack_require__(477);
 const crypto = __webpack_require__(19);
 
 /**
@@ -75632,7 +75765,7 @@ module.exports.createTransport = function (transporter, defaults) {
 "use strict";
 
 
-const spawn = __webpack_require__(475).spawn;
+const spawn = __webpack_require__(476).spawn;
 const packageData = __webpack_require__(25);
 const LeWindows = __webpack_require__(78);
 const LeUnix = __webpack_require__(137);
@@ -93959,6 +94092,18 @@ module.exports = __webpack_require__.p + "a25bde6aed8af5cc5e3cf0b4a21086b5.png";
 /* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "d0f155a0d453e0221832f713151954ce.jpg";
+
+/***/ }),
+/* 471 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/jpeg;base64,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"
+
+/***/ }),
+/* 472 */
+/***/ (function(module, exports, __webpack_require__) {
+
 
 /**
  * For Node.js, simply re-export the core `util.deprecate` function.
@@ -93968,7 +94113,7 @@ module.exports = __webpack_require__(7).deprecate;
 
 
 /***/ }),
-/* 471 */
+/* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -94106,7 +94251,7 @@ function vary (res, field) {
 
 
 /***/ }),
-/* 472 */
+/* 474 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -94134,7 +94279,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 473 */
+/* 475 */
 /***/ (function(module, exports) {
 
 module.exports = extend
@@ -94159,26 +94304,25 @@ function extend() {
 
 
 /***/ }),
-/* 474 */,
-/* 475 */
+/* 476 */
 /***/ (function(module, exports) {
 
 module.exports = require("child_process");
 
 /***/ }),
-/* 476 */
+/* 477 */
 /***/ (function(module, exports) {
 
 module.exports = require("dns");
 
 /***/ }),
-/* 477 */
+/* 478 */
 /***/ (function(module, exports) {
 
 module.exports = require("string_decoder");
 
 /***/ }),
-/* 478 */
+/* 479 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(195);
@@ -94186,7 +94330,6 @@ module.exports = __webpack_require__(194);
 
 
 /***/ }),
-/* 479 */,
 /* 480 */,
 /* 481 */,
 /* 482 */,
@@ -94201,10 +94344,103 @@ module.exports = __webpack_require__(194);
 /* 491 */,
 /* 492 */,
 /* 493 */,
-/* 494 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 494 */,
+/* 495 */
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "d0f155a0d453e0221832f713151954ce.jpg";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+// returns a function that calculates lanczos weight
+function lanczosCreate(lobes) {
+    return function (x) {
+        if (x > lobes) return 0;
+        x *= Math.PI;
+        if (Math.abs(x) < 1e-16) return 1;
+        var xx = x / lobes;
+        return Math.sin(x) * Math.sin(xx) / x / xx;
+    };
+}
+
+// elem: canvas element, img: image element, sx: scaled width, lobes: kernel radius
+function thumbnailer(elem, img, sx, lobes) {
+    this.canvas = elem;
+    elem.width = img.width;
+    elem.height = img.height;
+    elem.style.display = "none";
+    this.ctx = elem.getContext("2d");
+    this.ctx.drawImage(img, 0, 0);
+    this.img = img;
+    this.src = this.ctx.getImageData(0, 0, img.width, img.height);
+    this.dest = {
+        width: sx,
+        height: Math.round(img.height * sx / img.width)
+    };
+    this.dest.data = new Array(this.dest.width * this.dest.height * 3);
+    this.lanczos = lanczosCreate(lobes);
+    this.ratio = img.width / sx;
+    this.rcp_ratio = 2 / this.ratio;
+    this.range2 = Math.ceil(this.ratio * lobes / 2);
+    this.cacheLanc = {};
+    this.center = {};
+    this.icenter = {};
+    setTimeout(this.process1, 0, this, 0);
+}
+
+thumbnailer.prototype.process1 = function (self, u) {
+    self.center.x = (u + 0.5) * self.ratio;
+    self.icenter.x = Math.floor(self.center.x);
+    for (var v = 0; v < self.dest.height; v++) {
+        self.center.y = (v + 0.5) * self.ratio;
+        self.icenter.y = Math.floor(self.center.y);
+        var a, r, g, b;
+        a = r = g = b = 0;
+        for (var i = self.icenter.x - self.range2; i <= self.icenter.x + self.range2; i++) {
+            if (i < 0 || i >= self.src.width) continue;
+            var f_x = Math.floor(1000 * Math.abs(i - self.center.x));
+            if (!self.cacheLanc[f_x]) self.cacheLanc[f_x] = {};
+            for (var j = self.icenter.y - self.range2; j <= self.icenter.y + self.range2; j++) {
+                if (j < 0 || j >= self.src.height) continue;
+                var f_y = Math.floor(1000 * Math.abs(j - self.center.y));
+                if (self.cacheLanc[f_x][f_y] == undefined) self.cacheLanc[f_x][f_y] = self.lanczos(Math.sqrt(Math.pow(f_x * self.rcp_ratio, 2) + Math.pow(f_y * self.rcp_ratio, 2)) / 1000);
+                weight = self.cacheLanc[f_x][f_y];
+                if (weight > 0) {
+                    var idx = (j * self.src.width + i) * 4;
+                    a += weight;
+                    r += weight * self.src.data[idx];
+                    g += weight * self.src.data[idx + 1];
+                    b += weight * self.src.data[idx + 2];
+                }
+            }
+        }
+        var idx = (v * self.dest.width + u) * 3;
+        self.dest.data[idx] = r / a;
+        self.dest.data[idx + 1] = g / a;
+        self.dest.data[idx + 2] = b / a;
+    }
+
+    if (++u < self.dest.width) setTimeout(self.process1, 0, self, u);else setTimeout(self.process2, 0, self);
+};
+thumbnailer.prototype.process2 = function (self) {
+    self.canvas.width = self.dest.width;
+    self.canvas.height = self.dest.height;
+    self.ctx.drawImage(self.img, 0, 0, self.dest.width, self.dest.height);
+    self.src = self.ctx.getImageData(0, 0, self.dest.width, self.dest.height);
+    var idx, idx2;
+    for (var i = 0; i < self.dest.width; i++) {
+        for (var j = 0; j < self.dest.height; j++) {
+            idx = (j * self.dest.width + i) * 3;
+            idx2 = (j * self.dest.width + i) * 4;
+            self.src.data[idx2] = self.dest.data[idx];
+            self.src.data[idx2 + 1] = self.dest.data[idx + 1];
+            self.src.data[idx2 + 2] = self.dest.data[idx + 2];
+        }
+    }
+    self.ctx.putImageData(self.src, 0, 0);
+    self.canvas.style.display = "block";
+};
+
+exports["default"] = thumbnailer;
 
 /***/ })
 /******/ ]);

@@ -1,6 +1,6 @@
 .terms-banner {
   overflow: auto;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color-alternate);
   color: white;
   font-family: var(--logo-font);
   text-align: center;
