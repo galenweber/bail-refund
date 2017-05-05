@@ -8,6 +8,97 @@
   padding-bottom: 80px;
 }
 
+.photo-apply__popup-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/*https://dribbble.com/shots/2179187-Newsletter-Signup*/
+
+.photo-apply__popup {
+  background-color: white;
+  position: relative;
+  top: 50%;
+  border-radius: 5px;
+  opacity: 1;
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  margin-top: -250px;
+  padding: 0;
+  max-width: 100%;
+}
+
+.photo-apply__popup-body {
+  padding: 20px;
+  padding-top: 20px;
+  text-align: left;
+}
+
+@media(min-width: 600px) {
+  .photo-apply__popup-body {
+    padding: 40px;
+    padding-top:20px;
+  }
+}
+
+.photo-apply__popup-blue-bar {
+  height: 20px;
+  width: 100%;
+  background-color: var(--primary-color-alternate);
+}
+
+.popup__header {
+  font-family: var(--logo-font);
+  font-weight: 700;
+}
+
+.popup__input-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.popup__input {
+  flex-grow: 1;
+  flex-basis: 1;
+  line-height: 1.5em;
+  font-size: 1.3em;
+  padding-left: 10px;
+  border: 1px solid black;
+  min-width: 0;
+  border-radius: 0;
+}
+
+.popup__button {
+  width: 100px;
+  background-color: black;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  text-transform: uppercase;
+  font-family: var(--logo-font);
+  cursor: pointer;
+}
+
+.popup__no-spam-label {
+  margin-top: 2px;
+  font-family: var(--logo-font);
+  font-size: 10px;
+}
+
+.photo-apply a {
+  color: var(--primary-color-alternate);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .photo-apply h2 {
   text-align: center;
 }
@@ -79,6 +170,14 @@
   width: 225px;
   max-width: 100%;
 }
+
+.popup__loading {
+  position: absolute;
+  left:0;
+  bottom: 0;
+  width: 100%;
+}
+
 
 .form__progress {
   position: relative;

@@ -41,10 +41,10 @@ export default function FaqBanner() {
         <div className="faqbanner__flexcontainer">
           <div className="faqbanner__flexleft">
             <h3 className="faqbanner__p-q">
-              What if the case is still ongoing?
+              What if the case just started?
             </h3>
             <p className="faqbanner__p-a">
-              That's totally fine! Many of our clients get pre-approved while the case is ongoing and receive their cash payment as soon as the case ends.
+              That's totally fine! Most of our clients get pre-approved while the case is ongoing and receive their cash payment as soon as the case ends.
             </p>
           </div>
           <div className="faqbanner__flexright">
@@ -52,7 +52,7 @@ export default function FaqBanner() {
               Can we complete everything online?
             </h3>
             <p className="faqbanner__p-a">
-              Unfortunately an in-person meeting at our offices is necessary to provide the cash payment. We are hoping to provide an entirely online process soon.
+              Yes, so long as the case is still going. If the case is already over, an in-person meeting at our offices is necessary.
             </p>
           </div>
         </div>

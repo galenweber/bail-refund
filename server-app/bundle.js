@@ -353,7 +353,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 "use strict";
 
 
-module.exports = __webpack_require__(31);
+module.exports = __webpack_require__(32);
 
 
 /***/ }),
@@ -800,7 +800,7 @@ module.exports = { debugTool: debugTool };
 
 
 
-var _prodInvariant = __webpack_require__(33);
+var _prodInvariant = __webpack_require__(34);
 
 var ReactCurrentOwner = __webpack_require__(22);
 
@@ -3599,6 +3599,20 @@ module.exports = ReactReconciler;
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
+exports.Link = __webpack_require__(440);
+exports.Button = __webpack_require__(438);
+exports.Element = __webpack_require__(439);
+exports.Helpers = __webpack_require__(64);
+exports.scroller = __webpack_require__(178);
+exports.Events = __webpack_require__(99);
+exports.scrollSpy = __webpack_require__(177);
+exports.animateScroll = __webpack_require__(98);
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3619,7 +3633,7 @@ var ReactComponent = __webpack_require__(100);
 var ReactPureComponent = __webpack_require__(451);
 var ReactClass = __webpack_require__(447);
 var ReactDOMFactories = __webpack_require__(448);
-var ReactElement = __webpack_require__(32);
+var ReactElement = __webpack_require__(33);
 var ReactPropTypes = __webpack_require__(449);
 var ReactVersion = __webpack_require__(452);
 
@@ -3705,7 +3719,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = React;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4051,7 +4065,7 @@ ReactElement.isValidElement = function (object) {
 module.exports = ReactElement;
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4095,13 +4109,13 @@ function reactProdInvariant(code) {
 module.exports = reactProdInvariant;
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 module.exports = require("net");
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var jsencoding = __webpack_require__(226);
@@ -4292,7 +4306,7 @@ function basename(path) {
 exports.basename = basename;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -4387,7 +4401,7 @@ function forEach (xs, f) {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -4482,7 +4496,7 @@ function forEach (xs, f) {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4507,7 +4521,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = emptyObject;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4652,7 +4666,7 @@ function fresh(url, parsedUrl) {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4773,20 +4787,6 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports.Link = __webpack_require__(440);
-exports.Button = __webpack_require__(438);
-exports.Element = __webpack_require__(439);
-exports.Helpers = __webpack_require__(64);
-exports.scroller = __webpack_require__(178);
-exports.Events = __webpack_require__(99);
-exports.scrollSpy = __webpack_require__(177);
-exports.animateScroll = __webpack_require__(98);
-
 
 /***/ }),
 /* 42 */
@@ -12750,7 +12750,7 @@ module.exports = LeWindows;
 
 const packageInfo = __webpack_require__(25);
 const EventEmitter = __webpack_require__(10).EventEmitter;
-const net = __webpack_require__(34);
+const net = __webpack_require__(35);
 const tls = __webpack_require__(104);
 const os = __webpack_require__(68);
 const crypto = __webpack_require__(19);
@@ -14289,7 +14289,7 @@ module.exports = {
 
 
 
-var DOMLazyTree = __webpack_require__(40);
+var DOMLazyTree = __webpack_require__(41);
 var Danger = __webpack_require__(374);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactInstrumentation = __webpack_require__(15);
@@ -14844,7 +14844,7 @@ var _prodInvariant = __webpack_require__(3);
 var ReactPropTypesSecret = __webpack_require__(163);
 var propTypesFactory = __webpack_require__(140);
 
-var React = __webpack_require__(31);
+var React = __webpack_require__(32);
 var PropTypes = propTypesFactory(React.isValidElement);
 
 var invariant = __webpack_require__(0);
@@ -16430,12 +16430,12 @@ module.exports = Events;
 
 
 
-var _prodInvariant = __webpack_require__(33);
+var _prodInvariant = __webpack_require__(34);
 
 var ReactNoopUpdateQueue = __webpack_require__(101);
 
 var canDefineProperty = __webpack_require__(65);
-var emptyObject = __webpack_require__(38);
+var emptyObject = __webpack_require__(39);
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
 
@@ -17828,7 +17828,7 @@ if (debug && debug.debuglog) {
 util.inherits(Readable, Stream);
 
 function ReadableState(options, stream) {
-  var Duplex = __webpack_require__(36);
+  var Duplex = __webpack_require__(37);
 
   options = options || {};
 
@@ -17896,7 +17896,7 @@ function ReadableState(options, stream) {
 }
 
 function Readable(options) {
-  var Duplex = __webpack_require__(36);
+  var Duplex = __webpack_require__(37);
 
   if (!(this instanceof Readable))
     return new Readable(options);
@@ -18786,7 +18786,7 @@ function indexOf (xs, x) {
 
 module.exports = Transform;
 
-var Duplex = __webpack_require__(36);
+var Duplex = __webpack_require__(37);
 
 /*<replacement>*/
 var util = __webpack_require__(12);
@@ -18985,7 +18985,7 @@ function WriteReq(chunk, encoding, cb) {
 }
 
 function WritableState(options, stream) {
-  var Duplex = __webpack_require__(36);
+  var Duplex = __webpack_require__(37);
 
   options = options || {};
 
@@ -19073,7 +19073,7 @@ function WritableState(options, stream) {
 }
 
 function Writable(options) {
-  var Duplex = __webpack_require__(36);
+  var Duplex = __webpack_require__(37);
 
   // Writable ctor is applied to Duplexes, though they're not
   // instanceof Writable, they're instanceof Readable.
@@ -19422,7 +19422,7 @@ exports = module.exports = __webpack_require__(106);
 exports.Stream = __webpack_require__(2);
 exports.Readable = exports;
 exports.Writable = __webpack_require__(108);
-exports.Duplex = __webpack_require__(36);
+exports.Duplex = __webpack_require__(37);
 exports.Transform = __webpack_require__(107);
 exports.PassThrough = __webpack_require__(231);
 if (!process.browser && process.env.READABLE_STREAM === 'disable') {
@@ -20477,7 +20477,7 @@ if (debug && debug.debuglog) {
 util.inherits(Readable, Stream);
 
 function ReadableState(options, stream) {
-  var Duplex = __webpack_require__(37);
+  var Duplex = __webpack_require__(38);
 
   options = options || {};
 
@@ -20545,7 +20545,7 @@ function ReadableState(options, stream) {
 }
 
 function Readable(options) {
-  var Duplex = __webpack_require__(37);
+  var Duplex = __webpack_require__(38);
 
   if (!(this instanceof Readable))
     return new Readable(options);
@@ -21435,7 +21435,7 @@ function indexOf (xs, x) {
 
 module.exports = Transform;
 
-var Duplex = __webpack_require__(37);
+var Duplex = __webpack_require__(38);
 
 /*<replacement>*/
 var util = __webpack_require__(12);
@@ -21634,7 +21634,7 @@ function WriteReq(chunk, encoding, cb) {
 }
 
 function WritableState(options, stream) {
-  var Duplex = __webpack_require__(37);
+  var Duplex = __webpack_require__(38);
 
   options = options || {};
 
@@ -21722,7 +21722,7 @@ function WritableState(options, stream) {
 }
 
 function Writable(options) {
-  var Duplex = __webpack_require__(37);
+  var Duplex = __webpack_require__(38);
 
   // Writable ctor is applied to Duplexes, though they're not
   // instanceof Writable, they're instanceof Readable.
@@ -22071,7 +22071,7 @@ exports = module.exports = __webpack_require__(114);
 exports.Stream = __webpack_require__(2);
 exports.Readable = exports;
 exports.Writable = __webpack_require__(116);
-exports.Duplex = __webpack_require__(37);
+exports.Duplex = __webpack_require__(38);
 exports.Transform = __webpack_require__(115);
 exports.PassThrough = __webpack_require__(248);
 if (!process.browser && process.env.READABLE_STREAM === 'disable') {
@@ -22325,7 +22325,7 @@ function base64DetectIncompleteChar(buffer) {
  * Module dependencies.
  */
 
-var parseUrl = __webpack_require__(39);
+var parseUrl = __webpack_require__(40);
 var qs = __webpack_require__(81);
 
 /**
@@ -22386,7 +22386,7 @@ var mixin = __webpack_require__(103);
 var debug = __webpack_require__(21)('express:router');
 var deprecate = __webpack_require__(24)('express');
 var flatten = __webpack_require__(50);
-var parseUrl = __webpack_require__(39);
+var parseUrl = __webpack_require__(40);
 var setPrototypeOf = __webpack_require__(66)
 
 /**
@@ -32389,9 +32389,9 @@ module.exports = ReactMarkupChecksum;
 
 var _prodInvariant = __webpack_require__(3);
 
-var DOMLazyTree = __webpack_require__(40);
+var DOMLazyTree = __webpack_require__(41);
 var DOMProperty = __webpack_require__(28);
-var React = __webpack_require__(31);
+var React = __webpack_require__(32);
 var ReactBrowserEventEmitter = __webpack_require__(59);
 var ReactCurrentOwner = __webpack_require__(22);
 var ReactDOMComponentTree = __webpack_require__(6);
@@ -32405,7 +32405,7 @@ var ReactReconciler = __webpack_require__(30);
 var ReactUpdateQueue = __webpack_require__(89);
 var ReactUpdates = __webpack_require__(20);
 
-var emptyObject = __webpack_require__(38);
+var emptyObject = __webpack_require__(39);
 var instantiateReactComponent = __webpack_require__(94);
 var invariant = __webpack_require__(0);
 var setInnerHTML = __webpack_require__(63);
@@ -32933,7 +32933,7 @@ module.exports = ReactMount;
 
 var _prodInvariant = __webpack_require__(3);
 
-var React = __webpack_require__(31);
+var React = __webpack_require__(32);
 
 var invariant = __webpack_require__(0);
 
@@ -34249,7 +34249,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 var ReactCurrentOwner = __webpack_require__(22);
 var ReactComponentTreeHook = __webpack_require__(16);
-var ReactElement = __webpack_require__(32);
+var ReactElement = __webpack_require__(33);
 
 var checkReactTypeSpec = __webpack_require__(453);
 
@@ -37934,7 +37934,7 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(258);
 
-var _reactScroll = __webpack_require__(41);
+var _reactScroll = __webpack_require__(31);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -38041,7 +38041,7 @@ var ApplyNow = function (_React$Component) {
         return _react2['default'].createElement(
           'div',
           { className: 'apply-now container' },
-          _react2['default'].createElement(Element, { name: 'applyNowScrollTo' }),
+          _react2['default'].createElement(Element, { name: 'manualApplyScrollTo' }),
           _react2['default'].createElement(
             'h2',
             { className: 'section-header' },
@@ -38229,7 +38229,7 @@ var ApplyNow = function (_React$Component) {
               {
                 onClick: this.onSubmit,
                 disabled: submitted,
-                className: 'apply-now__button' },
+                className: 'call-to-action__button' },
               this.state.submitted ? 'Submitted!' : 'Get pre-qualified'
             )
           )
@@ -38287,7 +38287,7 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(259);
 
-var _reactScroll = __webpack_require__(41);
+var _reactScroll = __webpack_require__(31);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -38381,7 +38381,7 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(260);
 
-var _reactScroll = __webpack_require__(41);
+var _reactScroll = __webpack_require__(31);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -38455,12 +38455,12 @@ function FaqBanner() {
         _react2['default'].createElement(
           'h3',
           { className: 'faqbanner__p-q' },
-          'What if the case is still ongoing?'
+          'What if the case just started?'
         ),
         _react2['default'].createElement(
           'p',
           { className: 'faqbanner__p-a' },
-          'That\'s totally fine! Many of our clients get pre-approved while the case is ongoing and receive their cash payment as soon as the case ends.'
+          'That\'s totally fine! Most of our clients get pre-approved while the case is ongoing and receive their cash payment as soon as the case ends.'
         )
       ),
       _react2['default'].createElement(
@@ -38474,7 +38474,7 @@ function FaqBanner() {
         _react2['default'].createElement(
           'p',
           { className: 'faqbanner__p-a' },
-          'Unfortunately an in-person meeting at our offices is necessary to provide the cash payment. We are hoping to provide an entirely online process soon.'
+          'Yes, so long as the case is still going. If the case is already over, an in-person meeting at our offices is necessary.'
         )
       )
     )
@@ -38539,18 +38539,18 @@ exports['default'] = function () {
     _react2['default'].createElement(
       'p',
       { className: 'how-works__body' },
-      'Apply with just your phone number, the status of the case, and court city.'
+      'Apply with just a photo of your bail receipt and a phone number or email to contact you at.'
     ),
     _react2['default'].createElement('hr', { className: 'how-works__divider' }),
     _react2['default'].createElement(
       'p',
       { className: 'how-works__subheader' },
-      'Schedule an appointment'
+      'Deposit your receipt via mail or in-person'
     ),
     _react2['default'].createElement(
       'p',
       { className: 'how-works__body' },
-      'If approved, we\'ll schedule a time for you to visit our Lower Manhattan office.'
+      'If approved, we\'ll send an envelop to collect your receipt, or invite you to drop it off at our offices.'
     ),
     _react2['default'].createElement('hr', { className: 'how-works__divider' }),
     _react2['default'].createElement(
@@ -38561,7 +38561,7 @@ exports['default'] = function () {
     _react2['default'].createElement(
       'p',
       { className: 'how-works__body' },
-      'Pick up your cash payment and leave your NYC cash bail receipt with us.'
+      'Pickup your cash payment the same day the case ends, or today if the case is over.'
     ),
     _react2['default'].createElement('hr', { className: 'how-works__divider' })
   );
@@ -38690,7 +38690,7 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(263);
 
-var _reactScroll = __webpack_require__(41);
+var _reactScroll = __webpack_require__(31);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -38718,7 +38718,7 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(264);
 
-var _reactScroll = __webpack_require__(41);
+var _reactScroll = __webpack_require__(31);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -38926,6 +38926,10 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactScroll = __webpack_require__(31);
+
+var _reactScroll2 = _interopRequireDefault(_reactScroll);
+
 __webpack_require__(266);
 
 var _bailReceipt = __webpack_require__(470);
@@ -38936,10 +38940,6 @@ var _submittedGraphic = __webpack_require__(471);
 
 var _submittedGraphic2 = _interopRequireDefault(_submittedGraphic);
 
-var _thumbnailer = __webpack_require__(495);
-
-var _thumbnailer2 = _interopRequireDefault(_thumbnailer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38947,6 +38947,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Element = _reactScroll2['default'].Element;
+var Link = _reactScroll2['default'].Link;
 
 var PhotoApply = function (_React$Component) {
   _inherits(PhotoApply, _React$Component);
@@ -38962,11 +38965,13 @@ var PhotoApply = function (_React$Component) {
       submitted: false,
       loading: false,
       text: 'upload receipt photo',
+      contactInfo: '',
       id: _this.id()
     };
 
     _this.handleImage = _this.handleImage.bind(_this);
-    _this.handleClick = _this.handleClick.bind(_this);
+    _this.sendContact = _this.sendContact.bind(_this);
+    _this.handleChange = _this.handleChange.bind(_this);
     return _this;
   }
 
@@ -38983,35 +38988,46 @@ var PhotoApply = function (_React$Component) {
       return id;
     }()
   }, {
-    key: 'handleClick',
+    key: 'sendContact',
     value: function () {
-      function handleClick(e) {
+      function sendContact(e) {
         var _this2 = this;
 
+        this.setState({
+          loading: true
+        });
         var _state = this.state,
-            uploaded = _state.uploaded,
-            id = _state.id;
+            id = _state.id,
+            contactInfo = _state.contactInfo;
 
-        if (uploaded) {
-          e.preventDefault();
-          this.setState({
-            text: 'submitting receipt'
+        var emailPromise = fetch('/api/email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            text: String(id) + ' \n ' + String(contactInfo),
+            subject: 'Submission Confirmed (' + String(id) + ')'
+          })
+        }).then(function (res) {
+          _this2.setState({
+            loading: false,
+            submitted: true,
+            text: 'submitted!'
           });
-          var emailPromise = fetch('/api/email/photo', {
-            method: 'POST',
-            body: { text: id }
-          }).then(function (res) {
-            _this2.setState({
-              loading: false,
-              src: _submittedGraphic2['default'],
-              submitted: true,
-              text: 'submitted!'
-            });
-          });
-        }
+        });
       }
 
-      return handleClick;
+      return sendContact;
+    }()
+  }, {
+    key: 'handleChange',
+    value: function () {
+      function handleChange(event) {
+        this.setState({ contactInfo: event.target.value });
+      }
+
+      return handleChange;
     }()
   }, {
     key: 'handleImage',
@@ -39059,19 +39075,100 @@ var PhotoApply = function (_React$Component) {
             loading = _state3.loading,
             text = _state3.text,
             uploaded = _state3.uploaded,
-            submitted = _state3.submitted;
+            submitted = _state3.submitted,
+            contactInfo = _state3.contactInfo;
 
 
         var hiddenStyle = { visibility: 'hidden' };
 
-        var subtext = '(No receipt? Complete a manual application here.)';
+        var subtext = _react2['default'].createElement(
+          'span',
+          null,
+          '(No receipt? Complete a ',
+          _react2['default'].createElement(
+            Link,
+            {
+              to: 'manualApplyScrollTo',
+              smooth: true,
+              offset: -50,
+              duration: 500,
+              delay: 100 },
+            'manual application here'
+          ),
+          '.)'
+        );
+
+        var contactButtonText = loading ? 'sending' : 'send';
 
         if (uploaded && !submitted) subtext = 'Tap to submit your receipt for review';
         if (uploaded && submitted) subtext = 'Success! We will reach out soon';
+        if (loading) subtext = 'This can take a minute...';
 
         return _react2['default'].createElement(
           'div',
           { className: 'photo-apply container' },
+          _react2['default'].createElement(
+            'div',
+            {
+              style: { display: uploaded && !submitted ? 'initial' : 'none' },
+              className: 'photo-apply__popup-background' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'photo-apply__popup' },
+              _react2['default'].createElement('div', { className: 'photo-apply__popup-blue-bar' }),
+              _react2['default'].createElement(
+                'div',
+                { className: 'photo-apply__popup-body' },
+                _react2['default'].createElement(
+                  'h1',
+                  { className: 'popup__header' },
+                  'Almost done!'
+                ),
+                _react2['default'].createElement(
+                  'p',
+                  null,
+                  'Enter the email or phone number you\'d like us to send your decision to.'
+                ),
+                _react2['default'].createElement(
+                  'div',
+                  { className: 'popup__input-container' },
+                  _react2['default'].createElement('input', {
+                    className: 'popup__input',
+                    type: 'email',
+                    autoCapitalize: 'none',
+                    value: contactInfo,
+                    onChange: this.handleChange
+                  }),
+                  _react2['default'].createElement(
+                    'button',
+                    {
+                      className: 'popup__button',
+                      onClick: this.sendContact
+                    },
+                    contactButtonText
+                  )
+                ),
+                _react2['default'].createElement(
+                  'p',
+                  { className: 'popup__no-spam-label' },
+                  'No spam, we hate it more than you do.'
+                ),
+                _react2['default'].createElement(
+                  'div',
+                  {
+                    className: 'popup__loading',
+                    style: loading ? {} : hiddenStyle
+                  },
+                  _react2['default'].createElement(
+                    'div',
+                    { className: 'form__progress' },
+                    _react2['default'].createElement('div', { className: 'form__indeterminate' })
+                  )
+                )
+              )
+            )
+          ),
+          _react2['default'].createElement(Element, { name: 'applyNowScrollTo' }),
           _react2['default'].createElement(
             'h2',
             { className: 'section-header' },
@@ -39102,7 +39199,7 @@ var PhotoApply = function (_React$Component) {
             'div',
             {
               className: 'photo-apply__loading',
-              style: loading ? {} : hiddenStyle
+              style: loading && !uploaded ? {} : hiddenStyle
             },
             _react2['default'].createElement(
               'div',
@@ -39160,7 +39257,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactScroll = __webpack_require__(41);
+var _reactScroll = __webpack_require__(31);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -42725,7 +42822,7 @@ var fs = __webpack_require__(13),
                      || __webpack_require__(109).Writable,
     inherits = __webpack_require__(7).inherits;
 
-var parseParams = __webpack_require__(35).parseParams;
+var parseParams = __webpack_require__(36).parseParams;
 
 function Busboy(opts) {
   if (!(this instanceof Busboy))
@@ -42827,9 +42924,9 @@ var ReadableStream = __webpack_require__(2).Readable || __webpack_require__(109)
 
 var Dicer = __webpack_require__(244);
 
-var parseParams = __webpack_require__(35).parseParams,
-    decodeText = __webpack_require__(35).decodeText,
-    basename = __webpack_require__(35).basename;
+var parseParams = __webpack_require__(36).parseParams,
+    decodeText = __webpack_require__(36).decodeText,
+    basename = __webpack_require__(36).basename;
 
 var RE_BOUNDARY = /^boundary$/i,
     RE_FIELD = /^form-data$/i,
@@ -43145,8 +43242,8 @@ module.exports = Multipart;
 /* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Decoder = __webpack_require__(35).Decoder,
-    decodeText = __webpack_require__(35).decodeText;
+var Decoder = __webpack_require__(36).Decoder,
+    decodeText = __webpack_require__(36).decodeText;
 
 var RE_CHARSET = /^charset$/i;
 
@@ -44212,7 +44309,7 @@ function createWritableStdioStream (fd) {
 
     case 'PIPE':
     case 'TCP':
-      var net = __webpack_require__(34);
+      var net = __webpack_require__(35);
       stream = new net.Socket({
         fd: fd,
         readable: false,
@@ -46111,12 +46208,12 @@ exports.init = function(app){
 
 var accepts = __webpack_require__(196);
 var deprecate = __webpack_require__(24)('express');
-var isIP = __webpack_require__(34).isIP;
+var isIP = __webpack_require__(35).isIP;
 var typeis = __webpack_require__(43);
 var http = __webpack_require__(44);
 var fresh = __webpack_require__(72);
 var parseRange = __webpack_require__(147);
-var parse = __webpack_require__(39);
+var parse = __webpack_require__(40);
 var proxyaddr = __webpack_require__(144);
 
 /**
@@ -48703,7 +48800,7 @@ var debug = __webpack_require__(286)('finalhandler')
 var encodeUrl = __webpack_require__(55)
 var escapeHtml = __webpack_require__(56)
 var onFinished = __webpack_require__(45)
-var parseUrl = __webpack_require__(39)
+var parseUrl = __webpack_require__(40)
 var statuses = __webpack_require__(67)
 var unpipe = __webpack_require__(189)
 
@@ -49389,7 +49486,7 @@ function createWritableStdioStream (fd) {
 
     case 'PIPE':
     case 'TCP':
-      var net = __webpack_require__(34);
+      var net = __webpack_require__(35);
       stream = new net.Socket({
         fd: fd,
         readable: false,
@@ -75088,7 +75185,7 @@ const util = __webpack_require__(7);
 const urllib = __webpack_require__(23);
 const packageData = __webpack_require__(25);
 const MailMessage = __webpack_require__(349);
-const net = __webpack_require__(34);
+const net = __webpack_require__(35);
 const dns = __webpack_require__(477);
 const crypto = __webpack_require__(19);
 
@@ -76368,7 +76465,7 @@ module.exports = DataStream;
  * Minimal HTTP/S proxy client
  */
 
-const net = __webpack_require__(34);
+const net = __webpack_require__(35);
 const tls = __webpack_require__(104);
 const urllib = __webpack_require__(23);
 
@@ -80271,7 +80368,7 @@ module.exports = ChangeEventPlugin;
 
 var _prodInvariant = __webpack_require__(3);
 
-var DOMLazyTree = __webpack_require__(40);
+var DOMLazyTree = __webpack_require__(41);
 var ExecutionEnvironment = __webpack_require__(8);
 
 var createNodesFromMarkup = __webpack_require__(274);
@@ -80996,7 +81093,7 @@ module.exports = ReactComponentBrowserEnvironment;
 var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(4);
 
-var React = __webpack_require__(31);
+var React = __webpack_require__(32);
 var ReactComponentEnvironment = __webpack_require__(87);
 var ReactCurrentOwner = __webpack_require__(22);
 var ReactErrorUtils = __webpack_require__(88);
@@ -81009,7 +81106,7 @@ if (process.env.NODE_ENV !== 'production') {
   var checkReactTypeSpec = __webpack_require__(426);
 }
 
-var emptyObject = __webpack_require__(38);
+var emptyObject = __webpack_require__(39);
 var invariant = __webpack_require__(0);
 var shallowEqual = __webpack_require__(71);
 var shouldUpdateReactComponent = __webpack_require__(96);
@@ -82023,7 +82120,7 @@ var _prodInvariant = __webpack_require__(3),
 
 var AutoFocusUtils = __webpack_require__(370);
 var CSSPropertyOperations = __webpack_require__(372);
-var DOMLazyTree = __webpack_require__(40);
+var DOMLazyTree = __webpack_require__(41);
 var DOMNamespaces = __webpack_require__(83);
 var DOMProperty = __webpack_require__(28);
 var DOMPropertyOperations = __webpack_require__(150);
@@ -83024,7 +83121,7 @@ module.exports = ReactDOMComponent;
 
 var _assign = __webpack_require__(4);
 
-var DOMLazyTree = __webpack_require__(40);
+var DOMLazyTree = __webpack_require__(41);
 var ReactDOMComponentTree = __webpack_require__(6);
 
 var ReactDOMEmptyComponent = function (instantiate) {
@@ -83588,7 +83685,7 @@ module.exports = ReactDOMNullInputValuePropHook;
 
 var _assign = __webpack_require__(4);
 
-var React = __webpack_require__(31);
+var React = __webpack_require__(32);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactDOMSelect = __webpack_require__(153);
 
@@ -83966,7 +84063,7 @@ var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(4);
 
 var DOMChildrenOperations = __webpack_require__(82);
-var DOMLazyTree = __webpack_require__(40);
+var DOMLazyTree = __webpack_require__(41);
 var ReactDOMComponentTree = __webpack_require__(6);
 
 var escapeTextContentForBrowser = __webpack_require__(62);
@@ -86150,7 +86247,7 @@ module.exports = ReactServerBatchingStrategy;
 
 var _prodInvariant = __webpack_require__(3);
 
-var React = __webpack_require__(31);
+var React = __webpack_require__(32);
 var ReactDOMContainerInfo = __webpack_require__(152);
 var ReactDefaultBatchingStrategy = __webpack_require__(154);
 var ReactInstrumentation = __webpack_require__(15);
@@ -86160,7 +86257,7 @@ var ReactServerBatchingStrategy = __webpack_require__(409);
 var ReactServerRenderingTransaction = __webpack_require__(164);
 var ReactUpdates = __webpack_require__(20);
 
-var emptyObject = __webpack_require__(38);
+var emptyObject = __webpack_require__(39);
 var instantiateReactComponent = __webpack_require__(94);
 var invariant = __webpack_require__(0);
 
@@ -89264,7 +89361,7 @@ module.exports = KeyEscapeUtils;
 
 
 
-var _prodInvariant = __webpack_require__(33);
+var _prodInvariant = __webpack_require__(34);
 
 var invariant = __webpack_require__(0);
 
@@ -89381,7 +89478,7 @@ module.exports = PooledClass;
 
 
 var PooledClass = __webpack_require__(445);
-var ReactElement = __webpack_require__(32);
+var ReactElement = __webpack_require__(33);
 
 var emptyFunction = __webpack_require__(17);
 var traverseAllChildren = __webpack_require__(456);
@@ -89576,15 +89673,15 @@ module.exports = ReactChildren;
 
 
 
-var _prodInvariant = __webpack_require__(33),
+var _prodInvariant = __webpack_require__(34),
     _assign = __webpack_require__(4);
 
 var ReactComponent = __webpack_require__(100);
-var ReactElement = __webpack_require__(32);
+var ReactElement = __webpack_require__(33);
 var ReactPropTypeLocationNames = __webpack_require__(181);
 var ReactNoopUpdateQueue = __webpack_require__(101);
 
-var emptyObject = __webpack_require__(38);
+var emptyObject = __webpack_require__(39);
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
 
@@ -90304,7 +90401,7 @@ module.exports = ReactClass;
 
 
 
-var ReactElement = __webpack_require__(32);
+var ReactElement = __webpack_require__(33);
 
 /**
  * Create a factory that creates HTML tag elements.
@@ -90479,7 +90576,7 @@ module.exports = ReactDOMFactories;
 
 
 
-var _require = __webpack_require__(32),
+var _require = __webpack_require__(33),
     isValidElement = _require.isValidElement;
 
 var factory = __webpack_require__(140);
@@ -90530,7 +90627,7 @@ var _assign = __webpack_require__(4);
 var ReactComponent = __webpack_require__(100);
 var ReactNoopUpdateQueue = __webpack_require__(101);
 
-var emptyObject = __webpack_require__(38);
+var emptyObject = __webpack_require__(39);
 
 /**
  * Base class helpers for the updating state of a component.
@@ -90591,7 +90688,7 @@ module.exports = '15.5.4';
 
 
 
-var _prodInvariant = __webpack_require__(33);
+var _prodInvariant = __webpack_require__(34);
 
 var ReactPropTypeLocationNames = __webpack_require__(181);
 var ReactPropTypesSecret = __webpack_require__(450);
@@ -90708,9 +90805,9 @@ module.exports = getNextDebugID;
  */
 
 
-var _prodInvariant = __webpack_require__(33);
+var _prodInvariant = __webpack_require__(34);
 
-var ReactElement = __webpack_require__(32);
+var ReactElement = __webpack_require__(33);
 
 var invariant = __webpack_require__(0);
 
@@ -90752,7 +90849,7 @@ module.exports = onlyChild;
 
 
 
-var _prodInvariant = __webpack_require__(33);
+var _prodInvariant = __webpack_require__(34);
 
 var ReactCurrentOwner = __webpack_require__(22);
 var REACT_ELEMENT_TYPE = __webpack_require__(179);
@@ -91067,7 +91164,7 @@ var etag = __webpack_require__(69)
 var fresh = __webpack_require__(72)
 var fs = __webpack_require__(13)
 var ms = __webpack_require__(461)
-var parseUrl = __webpack_require__(39)
+var parseUrl = __webpack_require__(40)
 var path = __webpack_require__(11)
 var resolve = path.resolve
 
@@ -91453,7 +91550,7 @@ function plural(ms, n, name) {
 
 var encodeUrl = __webpack_require__(55)
 var escapeHtml = __webpack_require__(56)
-var parseUrl = __webpack_require__(39)
+var parseUrl = __webpack_require__(40)
 var resolve = __webpack_require__(11).resolve
 var send = __webpack_require__(102)
 var url = __webpack_require__(23)
@@ -91829,7 +91926,7 @@ DataStream.prototype._flush = function (done) {
 var packageInfo = __webpack_require__(466);
 var EventEmitter = __webpack_require__(10).EventEmitter;
 var util = __webpack_require__(7);
-var net = __webpack_require__(34);
+var net = __webpack_require__(35);
 var tls = __webpack_require__(104);
 var os = __webpack_require__(68);
 var crypto = __webpack_require__(19);
@@ -94328,119 +94425,6 @@ module.exports = require("string_decoder");
 __webpack_require__(195);
 module.exports = __webpack_require__(194);
 
-
-/***/ }),
-/* 480 */,
-/* 481 */,
-/* 482 */,
-/* 483 */,
-/* 484 */,
-/* 485 */,
-/* 486 */,
-/* 487 */,
-/* 488 */,
-/* 489 */,
-/* 490 */,
-/* 491 */,
-/* 492 */,
-/* 493 */,
-/* 494 */,
-/* 495 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-// returns a function that calculates lanczos weight
-function lanczosCreate(lobes) {
-    return function (x) {
-        if (x > lobes) return 0;
-        x *= Math.PI;
-        if (Math.abs(x) < 1e-16) return 1;
-        var xx = x / lobes;
-        return Math.sin(x) * Math.sin(xx) / x / xx;
-    };
-}
-
-// elem: canvas element, img: image element, sx: scaled width, lobes: kernel radius
-function thumbnailer(elem, img, sx, lobes) {
-    this.canvas = elem;
-    elem.width = img.width;
-    elem.height = img.height;
-    elem.style.display = "none";
-    this.ctx = elem.getContext("2d");
-    this.ctx.drawImage(img, 0, 0);
-    this.img = img;
-    this.src = this.ctx.getImageData(0, 0, img.width, img.height);
-    this.dest = {
-        width: sx,
-        height: Math.round(img.height * sx / img.width)
-    };
-    this.dest.data = new Array(this.dest.width * this.dest.height * 3);
-    this.lanczos = lanczosCreate(lobes);
-    this.ratio = img.width / sx;
-    this.rcp_ratio = 2 / this.ratio;
-    this.range2 = Math.ceil(this.ratio * lobes / 2);
-    this.cacheLanc = {};
-    this.center = {};
-    this.icenter = {};
-    setTimeout(this.process1, 0, this, 0);
-}
-
-thumbnailer.prototype.process1 = function (self, u) {
-    self.center.x = (u + 0.5) * self.ratio;
-    self.icenter.x = Math.floor(self.center.x);
-    for (var v = 0; v < self.dest.height; v++) {
-        self.center.y = (v + 0.5) * self.ratio;
-        self.icenter.y = Math.floor(self.center.y);
-        var a, r, g, b;
-        a = r = g = b = 0;
-        for (var i = self.icenter.x - self.range2; i <= self.icenter.x + self.range2; i++) {
-            if (i < 0 || i >= self.src.width) continue;
-            var f_x = Math.floor(1000 * Math.abs(i - self.center.x));
-            if (!self.cacheLanc[f_x]) self.cacheLanc[f_x] = {};
-            for (var j = self.icenter.y - self.range2; j <= self.icenter.y + self.range2; j++) {
-                if (j < 0 || j >= self.src.height) continue;
-                var f_y = Math.floor(1000 * Math.abs(j - self.center.y));
-                if (self.cacheLanc[f_x][f_y] == undefined) self.cacheLanc[f_x][f_y] = self.lanczos(Math.sqrt(Math.pow(f_x * self.rcp_ratio, 2) + Math.pow(f_y * self.rcp_ratio, 2)) / 1000);
-                weight = self.cacheLanc[f_x][f_y];
-                if (weight > 0) {
-                    var idx = (j * self.src.width + i) * 4;
-                    a += weight;
-                    r += weight * self.src.data[idx];
-                    g += weight * self.src.data[idx + 1];
-                    b += weight * self.src.data[idx + 2];
-                }
-            }
-        }
-        var idx = (v * self.dest.width + u) * 3;
-        self.dest.data[idx] = r / a;
-        self.dest.data[idx + 1] = g / a;
-        self.dest.data[idx + 2] = b / a;
-    }
-
-    if (++u < self.dest.width) setTimeout(self.process1, 0, self, u);else setTimeout(self.process2, 0, self);
-};
-thumbnailer.prototype.process2 = function (self) {
-    self.canvas.width = self.dest.width;
-    self.canvas.height = self.dest.height;
-    self.ctx.drawImage(self.img, 0, 0, self.dest.width, self.dest.height);
-    self.src = self.ctx.getImageData(0, 0, self.dest.width, self.dest.height);
-    var idx, idx2;
-    for (var i = 0; i < self.dest.width; i++) {
-        for (var j = 0; j < self.dest.height; j++) {
-            idx = (j * self.dest.width + i) * 3;
-            idx2 = (j * self.dest.width + i) * 4;
-            self.src.data[idx2] = self.dest.data[idx];
-            self.src.data[idx2 + 1] = self.dest.data[idx + 1];
-            self.src.data[idx2 + 2] = self.dest.data[idx + 2];
-        }
-    }
-    self.ctx.putImageData(self.src, 0, 0);
-    self.canvas.style.display = "block";
-};
-
-exports["default"] = thumbnailer;
 
 /***/ })
 /******/ ]);

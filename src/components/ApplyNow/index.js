@@ -84,7 +84,7 @@ export default class ApplyNow extends React.Component {
 
     return (
       <div className="apply-now container">
-        <Element name="applyNowScrollTo"></Element>
+        <Element name="manualApplyScrollTo"></Element>
         <h2 className="section-header">
           Manual Bail Refund Application
         </h2>
@@ -182,7 +182,7 @@ export default class ApplyNow extends React.Component {
           <button
             onClick={this.onSubmit}
             disabled={submitted}
-            className="apply-now__button">
+            className="call-to-action__button">
             {(this.state.submitted) ? 'Submitted!' : 'Get pre-qualified'}
           </button>
         </form>
